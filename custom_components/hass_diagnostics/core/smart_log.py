@@ -32,8 +32,7 @@ def parse_log_record(record: LogRecord) -> dict:
         "name": record.name,
         "level": record.levelname,
         "message": message,
-        "created": record.created,
-        "timestamp": record.timestamp,
+        "timestamp": record.created,
     }
 
     # domain from name, message and exception
@@ -117,8 +116,7 @@ def convert_log_entry_to_record(entry: dict):
     args = {
         "name": entry["name"],
         "levelname": entry["level"],
-        "created": entry["first_occurred"],
-        "timestamp": entry["timestamp"],
+        "created": entry["timestamp"],
         "pathname": entry["source"][0],
         "lineno": entry["source"][1],
         "message": entry["message"][0],
